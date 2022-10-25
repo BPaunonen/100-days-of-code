@@ -1,0 +1,33 @@
+from ast import Pass
+from curses.ascii import isalpha
+import random
+def main():
+
+    ended = False
+    turns = 0
+    while not ended:    
+        print("Guess the number ")
+        randomnum = random.randint(1, 100)
+        found = False
+        print(randomnum)       
+        while not found:
+            guess = int(input("Whats your guess "))
+            if  guess == 0:
+                print("You need to input a numberic value")
+                turns += 1
+                continue
+            # if guess == randomnum and turns <=1:
+            if guess == randomnum:                 
+                print("Congrats, the random number is", randomnum)
+            elif guess > randomnum:
+                print("Guess lower")
+            else:
+                print("GUess higher")
+            
+
+
+       
+if __name__ == "__main__":
+    
+    main()
+        
